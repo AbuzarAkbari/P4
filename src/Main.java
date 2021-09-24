@@ -92,10 +92,10 @@ public class Main {
 
     private static void testAdresDAO(AdresDAO adao) throws SQLException {
 //        ReizigerDAO rdao = new ReizigerDAOPsql(getConnection());
-//
-//        System.out.println("\n---------- Test DOA.AdresDAO -------------");
-//
-//        // Haal alle adressen op uit de database
+////
+////        System.out.println("\n---------- Test DOA.AdresDAO -------------");
+////
+////        // Haal alle adressen op uit de database
 //        System.out.println("[Test] DOA.AdresDAO.findAll() geeft de volgende adressen:");
 //        List<Adres> adressen = adao.findAll();
 //        for (Adres a : adressen) {
@@ -133,15 +133,15 @@ public class Main {
         System.out.println("\n---------- TestOVChipkaartDAO -------------");
 
         AdresDAOPsql adao = new AdresDAOPsql(getConnection(),rdao);
-
-
-        // Haal alle OVChipkaarten op uit de database
+//
+//
+//        // Haal alle OVChipkaarten op uit de database
         List<OVChipkaart> ovChipkaarten = odao.findAll();
-//        System.out.println("[Test] OVChipkaartDAO.findAll() geeft de volgende OVChipkaarten:");
-//        for (OVChipkaart ovChipkaart : ovChipkaarten) {
-//            System.out.println(ovChipkaart);
-//        }
-//        System.out.println();
+////        System.out.println("[Test] OVChipkaartDAO.findAll() geeft de volgende OVChipkaarten:");
+        for (OVChipkaart ovChipkaart : ovChipkaarten) {
+            System.out.println(ovChipkaart);
+        }
+        System.out.println();
 
         // Maak een nieuw ovchipkaart aan en persisteer deze in de database
         Reiziger sarata = new Reiziger(101, "S", "", "Gota", java.sql.Date.valueOf("2000-05-04"));
@@ -149,7 +149,7 @@ public class Main {
         OVChipkaart ovChipkaart = new OVChipkaart(12321, java.sql.Date.valueOf("2019-1-1"), 1, 69.0, sarata);
 //        System.out.print("[Test] Eerst " + ovChipkaarten.size() + " OVKaarten, na OVChipkaartDAO.save() ");
         odao.save(ovChipkaart);
-
+//
         Adres sarataAdres = new Adres(12, "3721jl", "397", "Kometenlaan", "Utrecht", sarata);
         adao.save(sarataAdres);
 

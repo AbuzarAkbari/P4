@@ -2,6 +2,7 @@ package DOA;
 
 import domain.Reiziger;
 
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public interface ReizigerDAO {
 
     public Reiziger findById(int id) throws SQLException;
 
-    public List<Reiziger> findByGbdatum(String datum) throws SQLException;
+    public List<Reiziger> findByGbdatum(Date datum) throws SQLException;
 
     public List<Reiziger> findAll() throws SQLException;
 

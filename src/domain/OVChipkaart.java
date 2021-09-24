@@ -3,11 +3,11 @@ package domain;
 import java.sql.Date;
 
 public class OVChipkaart {
-    int kaartNummer;
-    Date geldigTot;
-    int klasse;
-    double saldo;
-    Reiziger reiziger;
+    private int kaartNummer;
+    private Date geldigTot;
+    private int klasse;
+    private double saldo;
+    private Reiziger reiziger;
 
     public OVChipkaart(int kaartNummer,Date geldigTot,int klasse,double saldo,Reiziger reiziger){
         this.kaartNummer = kaartNummer;
@@ -64,7 +64,6 @@ public class OVChipkaart {
                 ", geldigTot=" + geldigTot +
                 ", klasse=" + klasse +
                 ", saldo=" + saldo +
-                ", reiziger=" + reiziger +
                 '}';
     }
 

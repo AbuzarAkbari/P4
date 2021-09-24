@@ -13,7 +13,6 @@ public class Reiziger {
     private String achternaam;
     private Date geboortedatum;
     private Adres adres;
-    private OVChipkaart ovChipkaart;
     private ArrayList<OVChipkaart> OVChipkaarten = new ArrayList<>();
 
 
@@ -77,14 +76,6 @@ public class Reiziger {
         return adres;
     }
 
-    public void setOvChipkaart(OVChipkaart ovChipkaart) {
-        this.ovChipkaart = ovChipkaart;
-    }
-
-    public OVChipkaart getOvChipkaart() {
-        return ovChipkaart;
-    }
-
     public void setOVChipkaarten(ArrayList<OVChipkaart> OVChipkaarten) {
         this.OVChipkaarten = OVChipkaarten;
     }
@@ -93,18 +84,42 @@ public class Reiziger {
         return this.OVChipkaarten;
     }
 
+    public void addOVChipkaart(OVChipkaart OVChipkaart) {
+        if(!OVChipkaarten.contains(OVChipkaart)) {
+            OVChipkaarten.add(OVChipkaart);
+        }
+    }
+    public void removeOVChipkaart(OVChipkaart OVChipkaart) {
+
+        OVChipkaarten.remove(OVChipkaart);
+    }
+
 
     @Override
     public String toString() {
-        return "Reiziger{" +
+        String result =  "Reiziger{" +
                 "id=" + id +
                 ", voorletters='" + voorletters + '\'' +
                 ", tussenvoegsel='" + tussenvoegsel + '\'' +
                 ", achternaam='" + achternaam + '\'' +
                 ", geboortedatum=" + geboortedatum +
                 ", adres=" + adres +
-                ", ovChipkaart=" + ovChipkaart +
-                ", OVChipkaarten=" + OVChipkaarten +
                 '}';
+        String OVChipkaartString = "";
+        if (!this.OVChipkaarten.isEmpty()) {
+            OVChipkaartString += "OvChipkaarten[";
+            for (OVChipkaart OVKaart : OVChipkaarten) {
+                OVChipkaartString += " OvChipkaart" + OVKaart;
+            }
+            OVChipkaartString += " ]";
+        } else {
+            OVChipkaartString = "null";
+        }
+
+
+
+        return result ;
+
+
     }
 }

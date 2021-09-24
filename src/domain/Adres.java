@@ -67,7 +67,7 @@ public class Adres {
 
     @Override
     public String toString() {
-        return   "{"+reiziger+"domain.Adres{" +
+        return   "{domain.Adres{" +
                 "id=" + id +
                 ", postcode='" + postcode + '\'' +
                 ", huisnummer='" + huisnummer + '\'' +

@@ -1,5 +1,6 @@
 package DOA;
 
+import domain.Adres;
 import domain.OVChipkaart;
 import domain.Reiziger;
 
